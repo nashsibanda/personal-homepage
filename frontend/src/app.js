@@ -3,8 +3,8 @@ import NavMenu from "./components/nav_menu";
 
 const App = () => (
   <div className="site-container">
-    <p>Hello world!</p>
     <NavMenu />
+    <p>Hello world!</p>
   </div>
 );
 
