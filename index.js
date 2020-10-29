@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const errorHandlers = require("./utils/error_middlewares");
+const projectsRouter = require("./controllers/projects.routes");
 
 // App setup
 const app = express();
@@ -38,9 +39,11 @@ app.use(
 );
 app.use(express.static("build"));
 
+// Routes
 app.get("/", (req, res) => {
   res.send("Hello, world! It's NASH!");
 });
+app.use("/api/projects", projectsRouter);
 
 // Error handling
 app.use(errorHandlers.unknownEndpoint);
