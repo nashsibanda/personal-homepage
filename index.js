@@ -2,10 +2,14 @@ require("dotenv").config();
 const cors = require("cors");
 const express = require("express");
 const mongoose = require("mongoose");
+
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const errorHandlers = require("./utils/error_middlewares");
+
 const projectsRouter = require("./controllers/projects.routes");
+const blogRouter = require("./controllers/blog.routes");
+const userRouter = require("./controllers/user.routes");
 
 // App setup
 const app = express();
@@ -44,6 +48,8 @@ app.get("/", (req, res) => {
   res.send("Hello, world! It's NASH!");
 });
 app.use("/api/projects", projectsRouter);
+app.use("/api/blog", blogRouter);
+app.use("/api/user", userRouter);
 
 // Error handling
 app.use(errorHandlers.unknownEndpoint);

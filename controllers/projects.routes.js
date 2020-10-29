@@ -42,5 +42,3 @@ projectsRouter.post("/", async (req, res, next) => {
 });
 
 module.exports = projectsRouter;
-
-/*  */
