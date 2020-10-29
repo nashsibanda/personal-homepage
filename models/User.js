@@ -23,6 +23,10 @@ const UserSchema = new Schema(
     logo: {
       type: String,
     },
+    siteUrl: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,
