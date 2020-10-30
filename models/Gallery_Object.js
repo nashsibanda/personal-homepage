@@ -18,6 +18,7 @@ const GaleryObjectSchema = new Schema(
     },
     description: {
       type: String,
+      maxlength: 160,
     },
   },
   {
