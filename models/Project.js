@@ -8,6 +8,11 @@ const ProjectSchema = new Schema(
       type: String,
       required: true,
     },
+    oneLineDescription: {
+      type: String,
+      required: true,
+      maxlength: 80,
+    },
     description: {
       type: String,
       required: true,
@@ -19,6 +24,7 @@ const ProjectSchema = new Schema(
       type: String,
     },
     gallery: [GaleryObjectSchema],
+    mainImage: { type: String },
     technologies: [{ type: String }],
     dateCompleted: {
       type: Date,

@@ -25,12 +25,14 @@ projectsRouter.post("/", async (req, res, next) => {
   const body = req.body;
   const newProject = new Project({
     title: body.title,
+    oneLineDescription: body.oneLineDescription,
     description: body.description,
     repositoryUrl: body.repositoryUrl,
     deployedUrl: body.deployedUrl,
     gallery: body.gallery,
     technologies: body.technologies,
     dateCompleted: body.dateCompleted,
+    mainImage: body.mainImage,
   });
 
   try {
