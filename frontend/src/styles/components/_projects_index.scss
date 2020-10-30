@@ -1,0 +1,41 @@
+.projects-index {
+  h1 {
+    font-size: 7vw;
+  }
+
+  .projects-index-list {
+    display: flex;
+
+    li a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 2rem;
+      width: 13rem;
+      color: white;
+      transition: filter 0.4s;
+
+      filter: drop-shadow(1px 3px 1.3px transparentize($blue, 0.5));
+      background: none;
+
+      &:hover {
+        filter: drop-shadow(2rem 2rem 1.3px transparentize($blue, 0.3));
+        text-decoration: none;
+      }
+
+      h2 {
+        font-weight: 300;
+        font-size: 1.6rem;
+      }
+
+      img {
+        width: 80%;
+        margin-bottom: 0.5rem;
+      }
+
+      summary {
+        width: 100%;
+      }
+    }
+  }
+}
