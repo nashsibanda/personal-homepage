@@ -26,7 +26,7 @@ const Footer = ({ user }) => (
         >
           <img
             className="preload"
-            src="https://img.icons8.com/dotty/80/000000/github.png"
+            src="/images/github.png"
             alt="Github: nashsibanda"
           />
         </a>
@@ -40,7 +40,7 @@ const Footer = ({ user }) => (
         >
           <img
             className="preload"
-            src="https://img.icons8.com/dotty/80/000000/twitter.png"
+            src="/images/twitter.png"
             alt="Twitter: @nashsibanda"
           />
         </a>
@@ -54,7 +54,7 @@ const Footer = ({ user }) => (
         >
           <img
             className="preload"
-            src="https://img.icons8.com/dotty/80/000000/linkedin.png"
+            src="/images/linkedin.png"
             alt="LinkedIn: nashsibanda"
           />
         </a>
@@ -68,7 +68,7 @@ const Footer = ({ user }) => (
         >
           <img
             className="preload"
-            src="https://img.icons8.com/dotty/80/000000/youtube.png"
+            src="/images/youtube.png"
             alt="YouTube: NashX"
           />
         </a>
@@ -82,18 +82,25 @@ const Footer = ({ user }) => (
         >
           <img
             className="preload"
-            src="https://img.icons8.com/dotty/80/000000/instagram.png"
+            src="/images/instagram.png"
             alt="Instagram: nashsibanda"
           />
         </a>
       </li>
     </ul>
-    <div className="footer-information">
-      <a href="/#">
-        <img src={user.logo} alt={`Site logo for ${user.siteUrl}`}></img>
-      </a>
-      <span>Copyright 2020</span>
-    </div>
+    {user && (
+      <div className="footer-information">
+        <Link to="/">
+          <img src={user.logo} alt={`Site logo for ${user.siteUrl}`}></img>
+        </Link>
+        <span>
+          Copyright 2020 {user.name} | Social icons by{" "}
+          <a target="_blank" rel="noreferrer" href="https://icons8.com">
+            Icons8
+          </a>
+        </span>
+      </div>
+    )}
   </footer>
 );
 
