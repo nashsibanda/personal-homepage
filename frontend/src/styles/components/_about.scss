@@ -1,0 +1,66 @@
+.about-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: flex-start;
+  overflow: auto;
+
+  & > div {
+    padding-top: 4vh;
+    width: 35vw;
+  }
+
+  .profile-picture {
+    display: flex;
+    align-items: center;
+    height: 45vh;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+  }
+
+  .info {
+    margin-left: 2vw;
+    h1 {
+      font-size: 2rem;
+    }
+
+    .links,
+    details {
+      margin: 1rem 0;
+    }
+
+    .links a {
+      margin-right: 3rem;
+    }
+
+    details {
+      & > * {
+        margin-bottom: 0.6rem;
+        &:first-child {
+          margin-top: 0.6rem;
+        }
+        &:last-child {
+          margin-bottom: 2rem;
+        }
+      }
+
+      blockquote {
+        margin: 1rem 10%;
+      }
+    }
+
+    .links-list {
+      figcaption {
+        margin-bottom: 0.5rem;
+      }
+
+      ul {
+        column-count: 2;
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ import Homepage from "./components/homepage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProjectsIndex from "./components/projects/projects_index";
 import ProjectShow from "./components/projects/project_show";
+import AboutPage from "./components/about";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -17,7 +18,7 @@ const App = () => {
   );
   useEffect(() => ApiService.users.getUser().then(user => setUser(user)), []);
 
-  return true ? (
+  return (
     <Router>
       <Switch>
         <Route path="/projects/:projectSlug">
@@ -29,13 +30,14 @@ const App = () => {
         <Route path="/blog">
           <Homepage user={user} />
         </Route>
+        <Route path="/about">{user && <AboutPage user={user} />}</Route>
         <Route path="/">
           <Homepage user={user} />
         </Route>
       </Switch>
       <Footer user={user} />
     </Router>
-  ) : null;
+  );
 };
 
 export default App;
