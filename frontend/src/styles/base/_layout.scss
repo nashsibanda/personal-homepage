@@ -1,12 +1,13 @@
 body {
   font-family: $sans-serif;
   font-weight: 300;
-  background: $bluedark;
+  background: $dark-blue-gradient;
   color: white;
+  overflow-x: hidden;
 }
 
 #root {
-  margin: 7vh 5vw 0;
+  background: none;
 }
 
 h1 {
@@ -21,12 +22,21 @@ h2 {
 $main-margins: 2rem;
 
 main {
+  padding: 7vh 5vw 0;
   height: 50vw;
   min-height: 60vh;
   max-height: 68vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (max-height: 1000px) {
+    & {
+      padding-top: 0.5vh;
+      min-height: 60vh;
+      max-height: 65vh;
+    }
+  }
 }
 
 a {
