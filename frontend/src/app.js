@@ -1,24 +1,31 @@
 import React, { useEffect, useState } from "react";
-import UserServices from "./services/user.services";
+import ApiService from "./services/api_service";
 import Footer from "./components/footer";
 import Homepage from "./components/homepage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ProjectsIndex from "./components/projects/projects_index";
 
 const App = () => {
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState(null);
+  const [projects, setProjects] = useState(null);
 
-  useEffect(() => UserServices.getUser().then(user => setUser(user)), []);
+  useEffect(
+    () =>
+      ApiService.projects.getProjects().then(projects => setProjects(projects)),
+    []
+  );
+  useEffect(() => ApiService.users.getUser().then(user => setUser(user)), []);
 
-  return user ? (
+  return true ? (
     <Router>
       <Switch>
-        <Route path="/">
-          <Homepage user={user} />
-        </Route>
         <Route path="/projects">
-          <Homepage user={user} />
+          <ProjectsIndex projects={projects} />
         </Route>
         <Route path="/blog">
+          <Homepage user={user} />
+        </Route>
+        <Route path="/">
           <Homepage user={user} />
         </Route>
       </Switch>
