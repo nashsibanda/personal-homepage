@@ -11,7 +11,17 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
+    bio: {
+      type: String,
+      required: true,
+    },
     links: [
+      {
+        url: { type: String, required: true },
+        title: { type: String, required: true },
+      },
+    ],
+    resumes: [
       {
         url: { type: String, required: true },
         title: { type: String, required: true },
@@ -19,6 +29,7 @@ const UserSchema = new Schema(
     ],
     profilePicture: {
       type: String,
+      required: true,
     },
     logo: {
       type: String,

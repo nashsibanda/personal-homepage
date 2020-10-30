@@ -16,6 +16,8 @@ userRouter.post("/", async (req, res, next) => {
   const newUser = new User({
     name: body.name,
     headline: body.headline,
+    bio: body.bio,
+    resumes: body.resumes,
     siteUrl: body.siteUrl,
     links: body.links,
     profilePicture: body.profilePicture,
