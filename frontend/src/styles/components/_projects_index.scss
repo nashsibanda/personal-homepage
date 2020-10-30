@@ -4,7 +4,7 @@
   align-items: center;
 
   h1 {
-    font-size: 7vw;
+    font-size: 4rem;
   }
 
   .projects-index-list {
@@ -20,6 +20,7 @@
       align-items: center;
       margin: 2rem;
       width: 13rem;
+      max-width: 20vh;
       color: white;
       transition: filter 0.4s;
 
