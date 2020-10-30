@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ApiService from "./services/api_service";
-import Footer from "./components/footer";
+import Footer from "./components/footer/footer_main";
 import Homepage from "./components/homepage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProjectsIndex from "./components/projects/projects_index";
