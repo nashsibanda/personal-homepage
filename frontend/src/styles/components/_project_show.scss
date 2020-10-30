@@ -1,0 +1,58 @@
+.project-show {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: flex-start;
+  overflow: auto;
+
+  & > div {
+    padding-top: 4vh;
+    width: 35vw;
+  }
+
+  .gallery {
+    margin-right: 2vw;
+  }
+
+  .info {
+    margin-left: 2vw;
+    h1 {
+      font-size: 2rem;
+    }
+
+    .links,
+    details {
+      margin: 1rem 0;
+    }
+
+    .links a {
+      margin-right: 3rem;
+    }
+
+    details {
+      & > * {
+        margin-bottom: 0.6rem;
+        &:first-child {
+          margin-top: 0.6rem;
+        }
+        &:last-child {
+          margin-bottom: 2rem;
+        }
+      }
+
+      blockquote {
+        margin: 1rem 10%;
+      }
+    }
+
+    .tech-list {
+      figcaption {
+        margin-bottom: 0.5rem;
+      }
+
+      ul {
+        column-count: 2;
+      }
+    }
+  }
+}
