@@ -33,6 +33,7 @@ projectsRouter.post("/", async (req, res, next) => {
     technologies: body.technologies,
     dateCompleted: body.dateCompleted,
     mainImage: body.mainImage,
+    slug: body.slug || body.title.toLowerCase().replace(/\W/g, "-"),
   });
 
   try {

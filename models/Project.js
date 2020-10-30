@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const GaleryObjectSchema = require("./Gallery_Object");
 const Schema = mongoose.Schema;
+const uniqueValidator = require("mongoose-unique-validator");
+const { plugin } = require("./Gallery_Object");
 
 const ProjectSchema = new Schema(
   {
@@ -12,6 +14,10 @@ const ProjectSchema = new Schema(
       type: String,
       required: true,
       maxlength: 80,
+    },
+    slug: {
+      type: String,
+      unique: true,
     },
     description: {
       type: String,
@@ -34,5 +40,7 @@ const ProjectSchema = new Schema(
     timestamps: true,
   }
 );
+
+ProjectSchema.plugin(uniqueValidator);
 
 module.exports = Project = mongoose.model("Project", ProjectSchema);
