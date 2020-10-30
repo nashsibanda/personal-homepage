@@ -13,10 +13,11 @@
   .profile-picture {
     display: flex;
     align-items: center;
-    height: 45vh;
+    justify-content: flex-end;
 
     img {
-      width: 100%;
+      width: 70%;
+      max-width: 40vh;
       object-fit: contain;
       border-radius: 50%;
     }
