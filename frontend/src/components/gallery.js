@@ -25,8 +25,6 @@ const Gallery = ({ gallery }) => {
           <img src={url} alt={description} />
         ) : (
           <iframe
-            // width="560"
-            // height="315"
             src={`https://www.youtube-nocookie.com/embed/${getYoutubeId(
               url
             )}?showinfo=0&rel=1&color=white&autoplay=1&modestbranding=1`}
@@ -37,6 +35,7 @@ const Gallery = ({ gallery }) => {
           ></iframe>
         )}
       </div>
+      <div className="image-description">{description}</div>
       <ul>
         {gallery.map(item => (
           <li key={item.url} onClick={setItem(item.url)}>
