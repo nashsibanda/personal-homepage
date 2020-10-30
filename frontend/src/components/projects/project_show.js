@@ -21,7 +21,7 @@ const ProjectShow = ({ projects, match }) => {
       <Gallery gallery={gallery} />
       <div className="info">
         <h1>{title}</h1>
-        <summary>{oneLineDescription}</summary>
+        <h2>{oneLineDescription}</h2>
         <div className="links">
           {deployedUrl && (
             <a href={deployedUrl} target="_blank" rel="noreferrer">
@@ -34,7 +34,6 @@ const ProjectShow = ({ projects, match }) => {
             </a>
           )}
         </div>
-        <details>{parse(description)}</details>
         <figure className="tech-list">
           <figcaption>Technologies used:</figcaption>
           <ul>
@@ -43,6 +42,10 @@ const ProjectShow = ({ projects, match }) => {
             ))}
           </ul>
         </figure>
+        <details open>
+          <summary>Project Description:</summary>
+          {parse(description)}
+        </details>
       </div>
     </main>
   );
