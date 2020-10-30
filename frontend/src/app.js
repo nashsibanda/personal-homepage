@@ -4,6 +4,7 @@ import Footer from "./components/footer/footer_main";
 import Homepage from "./components/homepage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProjectsIndex from "./components/projects/projects_index";
+import ProjectShow from "./components/projects/project_show";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -19,6 +20,9 @@ const App = () => {
   return true ? (
     <Router>
       <Switch>
+        <Route path="/projects/:projectSlug">
+          {projects && <ProjectShow projects={projects} />}
+        </Route>
         <Route path="/projects">
           <ProjectsIndex projects={projects} />
         </Route>
