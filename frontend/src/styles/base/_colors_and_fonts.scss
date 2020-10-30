@@ -9,9 +9,6 @@ $green: #007f17;
 $red: #7e1a1a;
 $blue: #1d3e58;
 
-// Variable Colors
-$images-modal-bgcolor: #222;
-
 // Lightness Scale
 $lightest: 90%;
 $lighter: 70%;
@@ -51,3 +48,7 @@ $greenlight: scale-color($green, $lightness: $light);
 $greendark: scale-color($green, $lightness: $dark);
 $greendarker: scale-color($green, $lightness: $darker);
 $greendarkest: scale-color($green, $lightness: $darkest);
+
+// Variable Colors
+$images-modal-bgcolor: #222;
+$dark-blue-gradient: linear-gradient($bluedark, $bluedarkest);
