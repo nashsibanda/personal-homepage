@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 
 const getYoutubeId = url => {
-  const regex =
-    "(?im)\b(?:https?://)?(?:w{3}.)?youtu(?:be)?.(?:com|be)/(?:(?:??v=?i?=?/?)|watch?vi?=|watch?.*?&v=|embed/|)([A-Z0-9_-]{11})S*(?=s|$)";
+  // A more comprehensive regex, but that doesn't seem to work quite right.
+  // Hope to revisit in future.
+  // const regex = /\b(?:https?:\/\/)?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)\/(?:(?:\??v=?i?=?\/?)|watch\?vi?=|watch\?.*?&v=|embed\/|)([A-Z0-9_-]{11})/gim;
+
+  const regex = /(?<=\?v=)([a-zA-Z0-9_-]){11}/gim;
   const matches = url.match(regex);
-  if (matches) return matches[1];
+  if (matches) return matches[0];
 };
 
 const Gallery = ({ gallery }) => {
@@ -22,12 +25,14 @@ const Gallery = ({ gallery }) => {
           <img src={url} alt={description} />
         ) : (
           <iframe
-            width="560"
-            height="315"
-            src={`https://www.youtube.com/embed/${getYoutubeId(url)}`}
-            frameborder="0"
+            // width="560"
+            // height="315"
+            src={`https://www.youtube-nocookie.com/embed/${getYoutubeId(
+              url
+            )}?showinfo=0&rel=1&color=white&autoplay=1&modestbranding=1`}
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
             title={description}
           ></iframe>
         )}
