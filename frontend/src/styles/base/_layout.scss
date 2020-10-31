@@ -25,12 +25,16 @@ main {
   padding: 7vh 5vw 0;
   height: 50vw;
   min-height: 60vh;
-  max-height: 68vh;
+  max-height: 65vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  @media screen and (max-height: 1000px) {
+  &.slide-exit {
+    left: -5%;
+  }
+
+  @media screen and (max-height: 800px) {
     & {
       padding-top: 0.5vh;
       min-height: 60vh;
