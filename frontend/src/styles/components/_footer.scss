@@ -19,6 +19,25 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     padding: 1rem;
+
+    li {
+      width: 32%;
+
+      a {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+        font-size: 1.4rem;
+
+        @media (hover: hover) {
+          &:hover {
+            text-decoration: none;
+            background-color: $bluedark;
+          }
+        }
+      }
+    }
   }
 
   .social-links {
@@ -63,6 +82,12 @@ footer {
         display: block;
       }
     }
+
+    @media screen and (max-width: 300px) {
+      & > li:nth-last-child(-n + 2) {
+        display: none;
+      }
+    }
   }
 
   .footer-information {
@@ -72,5 +97,9 @@ footer {
     justify-content: space-around;
     font-size: 0.8rem;
     color: $graylight;
+
+    & > * {
+      max-width: 40%;
+    }
   }
 }
