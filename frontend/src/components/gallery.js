@@ -43,7 +43,6 @@ const Gallery = ({ gallery }) => {
         ]
       : gallery;
 
-    console.log(outputItems);
     return outputItems;
   };
 
