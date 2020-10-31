@@ -8,6 +8,28 @@ body {
 
 #root {
   background: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  > div {
+    margin: 7vh 5vw 0;
+    height: 80%;
+    overflow: auto;
+    overflow-x: hidden;
+    position: relative;
+
+    @media screen and (max-height: 900px) {
+      & {
+        margin: 0vh 10vw 0;
+        // height: 70%;
+      }
+    }
+    @media screen and (max-width: 800px) {
+      margin: 0vh 10vw 0;
+    }
+  }
 }
 
 h1 {
@@ -22,24 +44,15 @@ h2 {
 $main-margins: 2rem;
 
 main {
-  padding: 7vh 5vw 0;
-  height: 50vw;
-  min-height: 60vh;
-  max-height: 65vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  &.slide-exit {
-    left: -5%;
+  @media screen and (max-width: 800px) {
+    width: 100%;
   }
 
-  @media screen and (max-height: 800px) {
-    & {
-      padding-top: 0.5vh;
-      min-height: 60vh;
-      max-height: 65vh;
-    }
+  &.slide-exit {
+    overflow: hidden;
   }
 }
 

@@ -3,7 +3,13 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
+  // padding: 0 2rem;
+
+  @media screen and (max-width: 400px) {
+    & {
+      padding: 0 0.5rem;
+    }
+  }
 
   img {
     height: 3rem;
@@ -17,13 +23,19 @@ footer {
   .main-menu {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    padding: 1rem;
+    // justify-content: space-around;
 
     li {
-      width: 32%;
+      width: 33.333%;
+
+      &:last-child a {
+        border-right: none;
+      }
 
       a {
+        box-sizing: border-box;
+        border: 1px solid $bluedark;
+        border-left: none;
         display: block;
         width: 100%;
         padding: 1rem;

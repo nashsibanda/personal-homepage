@@ -1,9 +1,9 @@
 .project-show {
   display: flex;
+  overflow: auto;
   justify-content: center;
   flex-direction: row;
   align-items: flex-start;
-  overflow: auto;
 
   & > div {
     padding-top: 4vh;
@@ -53,6 +53,24 @@
       ul {
         column-count: 2;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .project-show {
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+
+    & > div {
+      padding-top: 1rem;
+      width: 100%;
+    }
+
+    .gallery,
+    .info {
+      margin: 0;
     }
   }
 }

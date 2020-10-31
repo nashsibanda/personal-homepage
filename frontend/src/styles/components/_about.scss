@@ -30,7 +30,7 @@
       font-size: 2rem;
     }
 
-    .links,
+    .links-list,
     details {
       margin: 1rem 0;
     }
@@ -63,6 +63,28 @@
       ul {
         column-count: 2;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .about-page {
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+
+    .profile-picture {
+      justify-content: center;
+    }
+
+    & > div {
+      padding-top: 1rem;
+      width: 100%;
+    }
+
+    .gallery,
+    .info {
+      margin: 0;
     }
   }
 }

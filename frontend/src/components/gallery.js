@@ -51,7 +51,13 @@ const Gallery = ({ gallery }) => {
   return (
     <div className="gallery">
       <div className="current-item">
-        <TransitionGroup>
+        <div
+          className="carousel-arrow left on-image"
+          onClick={setItem(galleryCarouselItems()[1].url)}
+        >
+          <div></div>
+        </div>
+        <TransitionGroup className="image-container">
           <CSSTransition key={url} classNames="slide" timeout={1000}>
             {type === "image" ? (
               <img src={url} alt={description} />
@@ -68,19 +74,37 @@ const Gallery = ({ gallery }) => {
             )}
           </CSSTransition>
         </TransitionGroup>
+        <div
+          className="carousel-arrow right on-image"
+          onClick={setItem(
+            galleryCarouselItems()[galleryCarouselItems().length - 2].url
+          )}
+        >
+          <div></div>
+        </div>
       </div>
       <div className="image-description">{description}</div>
       <ul>
         {carousel && (
-          <li
+          <div
             className="carousel-arrow left"
             onClick={setItem(galleryCarouselItems()[1].url)}
           >
             <div></div>
-          </li>
+          </div>
         )}
-        {galleryCarouselItems().map(item => (
-          <li key={item.url} onClick={setItem(item.url)}>
+        {galleryCarouselItems().map((item, index) => (
+          <li
+            key={item.url}
+            onClick={setItem(item.url)}
+            className={
+              index === 0
+                ? "first"
+                : index === galleryCarouselItems().length - 1
+                ? "last"
+                : ""
+            }
+          >
             <img
               src={
                 item.type === "image"
@@ -92,14 +116,14 @@ const Gallery = ({ gallery }) => {
           </li>
         ))}
         {carousel && (
-          <li
+          <div
             className="carousel-arrow right"
             onClick={setItem(
               galleryCarouselItems()[galleryCarouselItems().length - 2].url
             )}
           >
             <div></div>
-          </li>
+          </div>
         )}
       </ul>
     </div>

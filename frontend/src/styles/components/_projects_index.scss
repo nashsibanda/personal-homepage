@@ -19,8 +19,9 @@
       flex-direction: column;
       align-items: center;
       margin: 2rem;
-      width: 13rem;
-      max-width: 20vh;
+      width: 16vw;
+      min-width: 10rem;
+      max-width: 16rem;
       color: white;
       transition: filter 0.4s;
 
@@ -44,6 +45,7 @@
 
       summary {
         width: 100%;
+        min-height: 5rem;
       }
     }
   }
