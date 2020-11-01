@@ -113,7 +113,7 @@ dist
 /coverage
 
 # production
-/build
+# /build
 
 # misc
 .DS_Store
@@ -127,3 +127,4 @@ yarn-debug.log*
 yarn-error.log*
 
 test_photos/
+frontend/build

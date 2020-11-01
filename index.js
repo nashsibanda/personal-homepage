@@ -26,6 +26,7 @@ mongoose
 
 // App middleware
 app.use(bodyParser.json(), cors());
+app.use(express.static("build"));
 // -- Server logging
 app.use(
   morgan((tokens, req, res) =>
