@@ -31,13 +31,17 @@
 
     details {
       & > * {
-        margin-bottom: 0.6rem;
+        margin-bottom: 1rem;
         &:first-child {
           margin-top: 0.6rem;
         }
         &:last-child {
           margin-bottom: 2rem;
         }
+      }
+
+      li {
+        margin-left: 1rem;
       }
 
       blockquote {

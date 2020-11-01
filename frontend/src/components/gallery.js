@@ -62,6 +62,8 @@ const Gallery = ({ gallery }) => {
               <img src={url} alt={description} />
             ) : (
               <iframe
+                width="1280"
+                height="720"
                 src={`https://www.youtube-nocookie.com/embed/${getYoutubeId(
                   url
                 )}?showinfo=0&rel=1&color=white&autoplay=1&modestbranding=1`}
