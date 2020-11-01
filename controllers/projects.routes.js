@@ -21,27 +21,27 @@ projectsRouter.get("/:id", async (req, res) => {
 });
 
 // POST a new project
-projectsRouter.post("/", async (req, res, next) => {
-  const body = req.body;
-  const newProject = new Project({
-    title: body.title,
-    oneLineDescription: body.oneLineDescription,
-    description: body.description,
-    repositoryUrl: body.repositoryUrl,
-    deployedUrl: body.deployedUrl,
-    gallery: body.gallery,
-    technologies: body.technologies,
-    dateCompleted: body.dateCompleted,
-    mainImage: body.mainImage,
-    slug: body.slug || body.title.toLowerCase().replace(/\W/g, "-"),
-  });
+// projectsRouter.post("/", async (req, res, next) => {
+//   const body = req.body;
+//   const newProject = new Project({
+//     title: body.title,
+//     oneLineDescription: body.oneLineDescription,
+//     description: body.description,
+//     repositoryUrl: body.repositoryUrl,
+//     deployedUrl: body.deployedUrl,
+//     gallery: body.gallery,
+//     technologies: body.technologies,
+//     dateCompleted: body.dateCompleted,
+//     mainImage: body.mainImage,
+//     slug: body.slug || body.title.toLowerCase().replace(/\W/g, "-"),
+//   });
 
-  try {
-    const result = await newProject.save();
-    res.status(201).json(result);
-  } catch (err) {
-    return next(err);
-  }
-});
+//   try {
+//     const result = await newProject.save();
+//     res.status(201).json(result);
+//   } catch (err) {
+//     return next(err);
+//   }
+// });
 
 module.exports = projectsRouter;

@@ -21,20 +21,20 @@ blogRouter.get("/:id", async (req, res) => {
 });
 
 // POST a new blog post
-blogRouter.post("/", async (req, res, next) => {
-  const body = req.body;
-  const newBlogPost = new BlogPost({
-    title: body.title,
-    body: body.body,
-    gallery: body.gallery,
-  });
+// blogRouter.post("/", async (req, res, next) => {
+//   const body = req.body;
+//   const newBlogPost = new BlogPost({
+//     title: body.title,
+//     body: body.body,
+//     gallery: body.gallery,
+//   });
 
-  try {
-    const result = await newBlogPost.save();
-    res.status(201).json(result);
-  } catch (err) {
-    return next(err);
-  }
-});
+//   try {
+//     const result = await newBlogPost.save();
+//     res.status(201).json(result);
+//   } catch (err) {
+//     return next(err);
+//   }
+// });
 
 module.exports = blogRouter;
