@@ -45,12 +45,12 @@ app.use(
 app.use(express.static("build"));
 
 // Routes
-app.get("/", (req, res) => {
-  res.send("Hello, world! It's NASH!");
-});
 app.use("/api/projects", projectsRouter);
 app.use("/api/blog", blogRouter);
 app.use("/api/user", userRouter);
+app.get("/*", (req, res) => {
+  res.sendFile(__dirname + "/build/index.html");
+});
 
 // Error handling
 app.use(errorHandlers.unknownEndpoint);
