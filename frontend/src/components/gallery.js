@@ -8,7 +8,6 @@ const getYoutubeId = url => {
 
   const regex = /(?!\?v=)(?=\b)([a-zA-Z0-9_-]){11}(?=[\W\D])/gim;
   const matches = `${url} `.match(regex);
-  console.log(matches);
   if (matches) return matches[0];
 };
 
